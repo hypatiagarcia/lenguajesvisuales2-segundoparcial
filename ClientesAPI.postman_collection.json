@@ -1,0 +1,299 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "Clientes API - Lenguajes Visuales II",
+    "description": "Colección de Postman para probar todos los endpoints de la API de Clientes",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Clientes",
+      "item": [
+        {
+          "name": "Registrar Cliente con Fotos",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "CI",
+                  "value": "1234567890",
+                  "type": "text"
+                },
+                {
+                  "key": "Nombres",
+                  "value": "Juan Pérez Gómez",
+                  "type": "text"
+                },
+                {
+                  "key": "Direccion",
+                  "value": "Av. Principal #123, Santa Cruz",
+                  "type": "text"
+                },
+                {
+                  "key": "Telefono",
+                  "value": "77777777",
+                  "type": "text"
+                },
+                {
+                  "key": "FotoCasa1",
+                  "type": "file",
+                  "src": ""
+                },
+                {
+                  "key": "FotoCasa2",
+                  "type": "file",
+                  "src": ""
+                },
+                {
+                  "key": "FotoCasa3",
+                  "type": "file",
+                  "src": ""
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/clientes/registrar",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "clientes", "registrar"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Todos los Clientes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/clientes",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "clientes"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Cliente por CI",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/clientes/1234567890",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "clientes", "1234567890"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Foto Casa 1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/clientes/1234567890/foto/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "clientes", "1234567890", "foto", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Archivos",
+      "item": [
+        {
+          "name": "Subir Archivos ZIP",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "CICliente",
+                  "value": "1234567890",
+                  "type": "text"
+                },
+                {
+                  "key": "ArchivoZip",
+                  "type": "file",
+                  "src": ""
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/archivos/subir",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "archivos", "subir"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Archivos por Cliente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/archivos/cliente/1234567890",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "archivos", "cliente", "1234567890"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Archivo por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/archivos/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "archivos", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Todos los Archivos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/archivos",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "archivos"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Logs",
+      "item": [
+        {
+          "name": "Obtener Todos los Logs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/logs?limite=100&tipoLog=",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "logs"],
+              "query": [
+                {
+                  "key": "limite",
+                  "value": "100"
+                },
+                {
+                  "key": "tipoLog",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Logs de ERROR",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/logs?limite=50&tipoLog=ERROR",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "logs"],
+              "query": [
+                {
+                  "key": "limite",
+                  "value": "50"
+                },
+                {
+                  "key": "tipoLog",
+                  "value": "ERROR"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Log por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/logs/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "logs", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Estadísticas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/logs/estadisticas",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "logs", "estadisticas"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Logs por Fecha",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/logs/por-fecha?fechaInicio=2024-11-01&fechaFin=2024-11-30",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "logs", "por-fecha"],
+              "query": [
+                {
+                  "key": "fechaInicio",
+                  "value": "2024-11-01"
+                },
+                {
+                  "key": "fechaFin",
+                  "value": "2024-11-30"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://localhost:5001",
+      "type": "string"
+    }
+  ]
+}

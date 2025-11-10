@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClientesAPI</name>
+    </assembly>
+    <members>
+        <member name="M:ClientesAPI.Controllers.ArchivosController.SubirArchivos(ClientesAPI.DTOs.ArchivoUploadDto)">
+            <summary>
+            Sube múltiples archivos comprimidos en ZIP para un cliente
+            </summary>
+            <param name="uploadDto">CI del cliente y archivo ZIP</param>
+            <returns>Lista de archivos procesados</returns>
+        </member>
+        <member name="M:ClientesAPI.Controllers.ArchivosController.ObtenerArchivosPorCliente(System.String)">
+            <summary>
+            Obtiene todos los archivos de un cliente específico
+            </summary>
+            <param name="ciCliente">CI del cliente</param>
+            <returns>Lista de archivos del cliente</returns>
+        </member>
+        <member name="M:ClientesAPI.Controllers.ArchivosController.ObtenerArchivo(System.Int32)">
+            <summary>
+            Obtiene información de un archivo específico
+            </summary>
+            <param name="idArchivo">ID del archivo</param>
+            <returns>Información del archivo</returns>
+        </member>
+        <member name="M:ClientesAPI.Controllers.ArchivosController.ObtenerTodosLosArchivos">
+            <summary>
+            Obtiene todos los archivos registrados
+            </summary>
+            <returns>Lista de todos los archivos</returns>
+        </member>
+        <member name="M:ClientesAPI.Controllers.ClientesController.RegistrarCliente(ClientesAPI.DTOs.ClienteCreateDto)">
+            <summary>
+            Registra un nuevo cliente con sus fotografías
+            </summary>
+            <param name="clienteDto">Datos del cliente incluyendo fotografías</param>
+            <returns>Cliente registrado</returns>
+        </member>
+        <member name="M:ClientesAPI.Controllers.ClientesController.ObtenerCliente(System.String)">
+            <summary>
+            Obtiene la información de un cliente por su CI
+            </summary>
+            <param name="ci">Cédula de identidad del cliente</param>
+            <returns>Información del cliente</returns>
+        </member>
+        <member name="M:ClientesAPI.Controllers.ClientesController.ObtenerClientes">
+            <summary>
+            Obtiene la lista de todos los clientes
+            </summary>
+            <returns>Lista de clientes</returns>
+        </member>
+        <member name="M:ClientesAPI.Controllers.ClientesController.ObtenerFoto(System.String,System.Int32)">
+            <summary>
+            Obtiene una fotografía específica de un cliente
+            </summary>
+            <param name="ci">CI del cliente</param>
+            <param name="numeroFoto">Número de foto (1, 2 o 3)</param>
+            <returns>Archivo de imagen</returns>
+        </member>
+        <member name="M:ClientesAPI.Controllers.LogsController.ObtenerLogs(System.Int32,System.String)">
+            <summary>
+            Obtiene todos los registros de logs
+            </summary>
+            <param name="limite">Número máximo de registros a retornar (default: 100)</param>
+            <param name="tipoLog">Filtrar por tipo de log (INFO, ERROR, WARNING)</param>
+            <returns>Lista de logs</returns>
+        </member>
+        <member name="M:ClientesAPI.Controllers.LogsController.ObtenerLog(System.Int32)">
+            <summary>
+            Obtiene un log específico por su ID
+            </summary>
+            <param name="idLog">ID del log</param>
+            <returns>Información del log</returns>
+        </member>
+        <member name="M:ClientesAPI.Controllers.LogsController.ObtenerEstadisticas">
+            <summary>
+            Obtiene estadísticas de los logs
+            </summary>
+            <returns>Estadísticas de uso de la API</returns>
+        </member>
+        <member name="M:ClientesAPI.Controllers.LogsController.ObtenerLogsPorFecha(System.DateTime,System.DateTime)">
+            <summary>
+            Obtiene logs filtrados por fecha
+            </summary>
+            <param name="fechaInicio">Fecha de inicio (formato: yyyy-MM-dd)</param>
+            <param name="fechaFin">Fecha fin (formato: yyyy-MM-dd)</param>
+            <returns>Lista de logs en el rango de fechas</returns>
+        </member>
+    </members>
+</doc>
